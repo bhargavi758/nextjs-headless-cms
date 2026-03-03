@@ -2,6 +2,7 @@
 
 import { useRouter, useSearchParams } from "next/navigation";
 import { EventCategory } from "@/lib/cms/types";
+import { cn } from "@/lib/utils";
 
 const categories: { value: EventCategory | "all"; label: string }[] = [
   { value: "all", label: "All Events" },
@@ -43,11 +44,13 @@ export function EventFilter() {
             role="radio"
             aria-checked={activeCategory === value}
             onClick={() => handleFilter(value)}
-            className={`px-4 py-2 text-sm font-medium rounded-full transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 ${
+            className={cn(
+              "px-4 py-2 text-sm font-medium rounded-md transition-colors",
+              "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
               activeCategory === value
-                ? "bg-primary text-white"
-                : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-            }`}
+                ? "bg-primary text-primary-foreground"
+                : "bg-muted text-muted-foreground hover:text-foreground hover:bg-secondary"
+            )}
           >
             {label}
           </button>

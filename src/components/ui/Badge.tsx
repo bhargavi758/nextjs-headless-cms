@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { cn } from "@/lib/utils";
 
 type BadgeVariant = "default" | "primary" | "green" | "blue" | "amber";
 
@@ -9,21 +10,25 @@ interface BadgeProps {
 }
 
 const variantStyles: Record<BadgeVariant, string> = {
-  default: "bg-gray-100 text-gray-700",
+  default: "bg-muted text-muted-foreground",
   primary: "bg-primary/10 text-primary",
   green: "bg-emerald-50 text-emerald-700",
-  blue: "bg-blue-50 text-blue-700",
-  amber: "bg-amber-50 text-amber-700",
+  blue: "bg-sky-50 text-sky-700",
+  amber: "bg-amber-50 text-amber-800",
 };
 
 export function Badge({
   children,
   variant = "default",
-  className = "",
+  className,
 }: BadgeProps) {
   return (
     <span
-      className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium capitalize ${variantStyles[variant]} ${className}`}
+      className={cn(
+        "inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium uppercase tracking-wider",
+        variantStyles[variant],
+        className
+      )}
     >
       {children}
     </span>
@@ -46,7 +51,7 @@ const categoryVariantMap: Record<string, BadgeVariant> = {
 
 export function CategoryBadge({
   category,
-  className = "",
+  className,
 }: {
   category: string;
   className?: string;

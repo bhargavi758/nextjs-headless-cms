@@ -2,6 +2,7 @@ import Link from "next/link";
 import { CMSEvent } from "@/lib/cms/types";
 import { Card, CardImage, CardContent } from "@/components/ui/Card";
 import { CategoryBadge } from "@/components/ui/Badge";
+import { cn } from "@/lib/utils";
 
 function formatDate(dateStr: string): string {
   return new Date(dateStr + "T00:00:00").toLocaleDateString("en-US", {
@@ -22,29 +23,32 @@ export function EventCard({ event }: EventCardProps) {
       <Link href={`/events/${event.slug}`} className="block">
         <CardImage src={event.image.url} alt={event.image.alt} />
         <CardContent>
-          <div className="flex items-center gap-2 mb-2">
+          <div className="flex items-center gap-2 mb-3">
             <CategoryBadge category={event.category} />
             {event.featured && (
-              <span className="text-xs font-medium text-primary">
+              <span className="text-xs font-medium text-accent">
                 Featured
               </span>
             )}
           </div>
 
-          <h3 className="text-lg font-serif font-bold text-gray-900 group-hover:text-primary transition-colors line-clamp-2">
+          <h3 className={cn(
+            "text-lg font-serif font-bold text-card-foreground",
+            "group-hover:text-accent transition-colors line-clamp-2"
+          )}>
             {event.title}
           </h3>
 
-          <p className="mt-2 text-sm text-gray-600 line-clamp-2">
+          <p className="mt-2 text-sm text-muted-foreground line-clamp-2">
             {event.summary}
           </p>
 
-          <dl className="mt-4 space-y-1 text-sm text-gray-500">
+          <dl className="mt-4 space-y-1.5 text-sm text-muted-foreground">
             <div className="flex items-start gap-2">
               <dt className="sr-only">Date</dt>
               <dd className="flex items-center gap-1.5">
                 <svg
-                  className="h-4 w-4 text-gray-400 shrink-0"
+                  className="h-4 w-4 text-muted-foreground/60 shrink-0"
                   fill="none"
                   viewBox="0 0 24 24"
                   strokeWidth="1.5"
@@ -64,7 +68,7 @@ export function EventCard({ event }: EventCardProps) {
               <dt className="sr-only">Location</dt>
               <dd className="flex items-center gap-1.5">
                 <svg
-                  className="h-4 w-4 text-gray-400 shrink-0"
+                  className="h-4 w-4 text-muted-foreground/60 shrink-0"
                   fill="none"
                   viewBox="0 0 24 24"
                   strokeWidth="1.5"

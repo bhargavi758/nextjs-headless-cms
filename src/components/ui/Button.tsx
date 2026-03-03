@@ -1,5 +1,6 @@
 import { ButtonHTMLAttributes, AnchorHTMLAttributes, ReactNode } from "react";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 type BaseProps = {
   variant?: "primary" | "secondary" | "outline" | "ghost";
@@ -18,13 +19,13 @@ type ButtonProps = ButtonAsButton | ButtonAsLink;
 
 const variantStyles = {
   primary:
-    "bg-primary text-white hover:bg-primary-dark focus-visible:ring-primary",
+    "bg-primary text-primary-foreground hover:bg-primary/90 focus-visible:ring-ring",
   secondary:
-    "bg-sand-light text-primary border border-sand hover:bg-sand/30 focus-visible:ring-primary",
+    "bg-secondary text-secondary-foreground hover:bg-secondary/80 focus-visible:ring-ring",
   outline:
-    "border-2 border-primary text-primary hover:bg-primary hover:text-white focus-visible:ring-primary",
+    "border border-border text-foreground hover:bg-muted focus-visible:ring-ring",
   ghost:
-    "text-primary hover:bg-primary/5 focus-visible:ring-primary",
+    "text-accent hover:text-accent/80 hover:bg-accent/5 focus-visible:ring-ring",
 };
 
 const sizeStyles = {
@@ -37,22 +38,29 @@ export function Button({
   variant = "primary",
   size = "md",
   children,
-  className = "",
+  className,
   ...props
 }: ButtonProps) {
-  const baseClasses = `inline-flex items-center justify-center font-sans font-semibold rounded-md transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ${variantStyles[variant]} ${sizeStyles[size]} ${className}`;
+  const classes = cn(
+    "inline-flex items-center justify-center font-sans font-medium rounded-md",
+    "transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2",
+    "disabled:opacity-50 disabled:pointer-events-none",
+    variantStyles[variant],
+    sizeStyles[size],
+    className
+  );
 
   if ("href" in props && props.href) {
     const { href, ...rest } = props as ButtonAsLink;
     return (
-      <Link href={href} className={baseClasses} {...rest}>
+      <Link href={href} className={classes} {...rest}>
         {children}
       </Link>
     );
   }
 
   return (
-    <button className={baseClasses} {...(props as ButtonAsButton)}>
+    <button className={classes} {...(props as ButtonAsButton)}>
       {children}
     </button>
   );

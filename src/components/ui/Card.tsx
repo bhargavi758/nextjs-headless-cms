@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { cn } from "@/lib/utils";
 
 interface CardProps {
   children: ReactNode;
@@ -9,12 +10,16 @@ interface CardProps {
 
 export function Card({
   children,
-  className = "",
+  className,
   as: Tag = "div",
 }: CardProps) {
   return (
     <Tag
-      className={`bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden transition-shadow hover:shadow-md ${className}`}
+      className={cn(
+        "bg-card rounded-md border border-border overflow-hidden",
+        "transition-shadow hover:shadow-md",
+        className
+      )}
     >
       {children}
     </Tag>
@@ -37,9 +42,9 @@ export function CardImage({
   }[aspectRatio];
 
   return (
-    <div className={`${ratioClass} relative overflow-hidden bg-gray-100`}>
+    <div className={cn(ratioClass, "relative overflow-hidden bg-muted")}>
       <div
-        className="absolute inset-0 bg-gradient-to-br from-primary/20 to-sand/30"
+        className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10"
         role="img"
         aria-label={alt}
       />
@@ -49,10 +54,10 @@ export function CardImage({
 
 export function CardContent({
   children,
-  className = "",
+  className,
 }: {
   children: ReactNode;
   className?: string;
 }) {
-  return <div className={`p-5 ${className}`}>{children}</div>;
+  return <div className={cn("p-6", className)}>{children}</div>;
 }

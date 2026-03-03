@@ -3,38 +3,55 @@
 @tailwind utilities;
 
 @layer base {
-  html {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 20 14% 4%;
+    --card: 36 39% 97%;
+    --card-foreground: 20 14% 4%;
+    --primary: 24 10% 10%;
+    --primary-foreground: 60 9% 98%;
+    --secondary: 36 33% 92%;
+    --secondary-foreground: 24 10% 10%;
+    --muted: 36 33% 96%;
+    --muted-foreground: 25 5% 45%;
+    --accent: 12 76% 61%;
+    --accent-foreground: 60 9% 98%;
+    --border: 20 6% 90%;
+    --ring: 12 76% 61%;
+    --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-border;
   }
 
   body {
-    @apply font-sans text-gray-800 bg-white;
+    @apply bg-background text-foreground antialiased;
   }
 
   h1,
   h2,
   h3,
   h4 {
-    @apply font-serif text-gray-900;
+    @apply font-serif text-foreground;
   }
 
   :focus-visible {
-    @apply outline-none ring-2 ring-primary ring-offset-2;
+    @apply outline-none ring-2 ring-ring ring-offset-2;
   }
 }
 
 @layer components {
   .prose h2 {
-    @apply text-2xl font-serif font-bold text-gray-900 mt-10 mb-4;
+    @apply text-2xl font-serif font-bold text-foreground mt-10 mb-4;
   }
 
   .prose h3 {
-    @apply text-xl font-serif font-bold text-gray-900 mt-8 mb-3;
+    @apply text-xl font-serif font-bold text-foreground mt-8 mb-3;
   }
 
   .prose p {
-    @apply text-base leading-relaxed text-gray-700 mb-4;
+    @apply text-base leading-relaxed text-muted-foreground mb-4;
   }
 
   .prose ul {
@@ -42,15 +59,15 @@
   }
 
   .prose li {
-    @apply text-base text-gray-700 leading-relaxed;
+    @apply text-base text-muted-foreground leading-relaxed;
   }
 
   .prose strong {
-    @apply font-semibold text-gray-900;
+    @apply font-semibold text-foreground;
   }
 
   .prose a {
-    @apply text-primary underline underline-offset-2 hover:text-primary-dark;
+    @apply text-accent underline underline-offset-2 hover:text-accent/80;
   }
 }
 

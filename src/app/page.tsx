@@ -3,6 +3,7 @@ import { getFeaturedEvents, getLatestNews, getPage } from "@/lib/cms/client";
 import { EventCard } from "@/components/events/EventCard";
 import { NewsCard } from "@/components/news/NewsCard";
 import { Button } from "@/components/ui/Button";
+import { cn } from "@/lib/utils";
 
 export const revalidate = 3600;
 
@@ -103,37 +104,29 @@ export default async function HomePage() {
   return (
     <>
       <section
-        className="relative bg-primary text-white"
+        className="border-b border-border"
         aria-labelledby="hero-heading"
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-dark via-primary to-primary-light opacity-90" />
-        <div className="relative max-w-content mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-36">
+        <div className="max-w-content mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-36">
           <h1
             id="hero-heading"
-            className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold tracking-tight text-white max-w-3xl"
+            className={cn(
+              "text-4xl sm:text-5xl lg:text-6xl font-serif font-bold",
+              "tracking-tight text-foreground max-w-3xl leading-[1.1]"
+            )}
           >
             {page?.title ?? "Department of Computer Science"}
           </h1>
-          <p className="mt-6 text-lg sm:text-xl text-white/85 max-w-2xl leading-relaxed">
+          <p className="mt-6 text-lg sm:text-xl text-muted-foreground max-w-2xl leading-relaxed">
             {page?.body.html
               ? page.body.html.replace(/<[^>]+>/g, "")
               : "Advancing the frontiers of computing for humanity through world-class research and education."}
           </p>
-          <div className="mt-8 flex flex-wrap gap-4">
-            <Button
-              href="/events"
-              variant="secondary"
-              size="lg"
-              className="bg-white text-primary hover:bg-gray-100 border-0"
-            >
+          <div className="mt-10 flex flex-wrap gap-4">
+            <Button href="/events" variant="primary" size="lg">
               Upcoming Events
             </Button>
-            <Button
-              href="/about"
-              variant="outline"
-              size="lg"
-              className="border-white text-white hover:bg-white hover:text-primary"
-            >
+            <Button href="/about" variant="outline" size="lg">
               About the Department
             </Button>
           </div>
@@ -141,7 +134,7 @@ export default async function HomePage() {
       </section>
 
       <section
-        className="py-12 bg-sand-light"
+        className="py-14 bg-muted"
         aria-labelledby="quick-links-heading"
       >
         <div className="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
@@ -153,16 +146,24 @@ export default async function HomePage() {
               <Link
                 key={link.title}
                 href={link.href}
-                className="flex items-start gap-4 p-5 rounded-lg bg-white shadow-sm border border-gray-100 hover:shadow-md hover:border-primary/20 transition-all group"
+                className={cn(
+                  "flex items-start gap-4 p-5 rounded-md",
+                  "bg-background border border-border",
+                  "hover:shadow-md hover:border-accent/30 transition-all group"
+                )}
               >
-                <div className="shrink-0 p-2 rounded-lg bg-primary/5 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                <div className={cn(
+                  "shrink-0 p-2 rounded-md",
+                  "bg-accent/10 text-accent",
+                  "group-hover:bg-accent group-hover:text-accent-foreground transition-colors"
+                )}>
                   {link.icon}
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 group-hover:text-primary transition-colors">
+                  <h3 className="font-semibold text-foreground group-hover:text-accent transition-colors">
                     {link.title}
                   </h3>
-                  <p className="text-sm text-gray-500 mt-0.5">
+                  <p className="text-sm text-muted-foreground mt-0.5">
                     {link.description}
                   </p>
                 </div>
@@ -173,19 +174,19 @@ export default async function HomePage() {
       </section>
 
       <section
-        className="py-16 sm:py-20"
+        className="py-20 sm:py-24"
         aria-labelledby="featured-events-heading"
       >
         <div className="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-end justify-between mb-8">
+          <div className="flex items-end justify-between mb-10">
             <div>
               <h2
                 id="featured-events-heading"
-                className="text-3xl font-serif font-bold text-gray-900"
+                className="text-3xl sm:text-4xl font-serif font-bold text-foreground"
               >
                 Featured Events
               </h2>
-              <p className="mt-2 text-gray-600">
+              <p className="mt-2 text-muted-foreground">
                 Upcoming lectures, workshops, and conferences
               </p>
             </div>
@@ -198,7 +199,7 @@ export default async function HomePage() {
               <EventCard key={event.id} event={event} />
             ))}
           </div>
-          <div className="mt-8 text-center sm:hidden">
+          <div className="mt-10 text-center sm:hidden">
             <Button href="/events" variant="outline">
               View all events
             </Button>
@@ -207,19 +208,19 @@ export default async function HomePage() {
       </section>
 
       <section
-        className="py-16 sm:py-20 bg-gray-50"
+        className="py-20 sm:py-24 bg-muted/50 border-t border-border"
         aria-labelledby="latest-news-heading"
       >
         <div className="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-end justify-between mb-8">
+          <div className="flex items-end justify-between mb-10">
             <div>
               <h2
                 id="latest-news-heading"
-                className="text-3xl font-serif font-bold text-gray-900"
+                className="text-3xl sm:text-4xl font-serif font-bold text-foreground"
               >
                 Latest News
               </h2>
-              <p className="mt-2 text-gray-600">
+              <p className="mt-2 text-muted-foreground">
                 Research breakthroughs, awards, and department updates
               </p>
             </div>
@@ -232,7 +233,7 @@ export default async function HomePage() {
               <NewsCard key={article.id} article={article} />
             ))}
           </div>
-          <div className="mt-8 text-center sm:hidden">
+          <div className="mt-10 text-center sm:hidden">
             <Button href="/news" variant="outline">
               All news
             </Button>

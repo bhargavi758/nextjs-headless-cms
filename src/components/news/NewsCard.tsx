@@ -2,6 +2,7 @@ import Link from "next/link";
 import { CMSNewsArticle } from "@/lib/cms/types";
 import { Card, CardImage, CardContent } from "@/components/ui/Card";
 import { CategoryBadge } from "@/components/ui/Badge";
+import { cn } from "@/lib/utils";
 
 function formatPublishedDate(isoDate: string): string {
   return new Date(isoDate).toLocaleDateString("en-US", {
@@ -28,13 +29,18 @@ export function NewsCard({ article, featured = false }: NewsCardProps) {
           />
         </div>
         <CardContent className="flex flex-col justify-center md:w-3/5">
-          <CategoryBadge category={article.category} className="mb-2" />
-          <h3 className="text-xl lg:text-2xl font-serif font-bold text-gray-900 group-hover:text-primary transition-colors">
+          <CategoryBadge category={article.category} className="mb-3" />
+          <h3 className={cn(
+            "text-xl lg:text-2xl font-serif font-bold text-card-foreground",
+            "group-hover:text-accent transition-colors"
+          )}>
             <Link href={`/news/${article.slug}`}>{article.title}</Link>
           </h3>
-          <p className="mt-3 text-gray-600 line-clamp-3">{article.summary}</p>
-          <p className="mt-4 text-sm text-gray-500">
-            <span>{article.author}</span>
+          <p className="mt-3 text-muted-foreground line-clamp-3">
+            {article.summary}
+          </p>
+          <p className="mt-4 text-sm text-muted-foreground">
+            <span className="font-medium text-foreground">{article.author}</span>
             <span className="mx-2" aria-hidden="true">
               &middot;
             </span>
@@ -52,14 +58,17 @@ export function NewsCard({ article, featured = false }: NewsCardProps) {
       <Link href={`/news/${article.slug}`} className="block">
         <CardImage src={article.image.url} alt={article.image.alt} />
         <CardContent>
-          <CategoryBadge category={article.category} className="mb-2" />
-          <h3 className="text-lg font-serif font-bold text-gray-900 group-hover:text-primary transition-colors line-clamp-2">
+          <CategoryBadge category={article.category} className="mb-3" />
+          <h3 className={cn(
+            "text-lg font-serif font-bold text-card-foreground",
+            "group-hover:text-accent transition-colors line-clamp-2"
+          )}>
             {article.title}
           </h3>
-          <p className="mt-2 text-sm text-gray-600 line-clamp-2">
+          <p className="mt-2 text-sm text-muted-foreground line-clamp-2">
             {article.summary}
           </p>
-          <p className="mt-3 text-xs text-gray-500">
+          <p className="mt-3 text-xs text-muted-foreground">
             <time dateTime={article.publishedAt}>
               {formatPublishedDate(article.publishedAt)}
             </time>

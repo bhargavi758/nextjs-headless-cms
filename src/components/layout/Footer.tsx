@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 const footerLinks = {
   department: [
@@ -20,19 +21,22 @@ const footerLinks = {
 
 export function Footer() {
   return (
-    <footer className="bg-gray-900 text-gray-300" role="contentinfo">
-      <div className="max-w-content mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+    <footer className={cn("border-t border-border bg-muted")} role="contentinfo">
+      <div className="max-w-content mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           <div>
             <Link href="/" className="group">
-              <p className="text-lg font-serif font-bold text-white group-hover:underline decoration-2 underline-offset-4">
+              <p className={cn(
+                "text-lg font-serif font-bold text-foreground",
+                "group-hover:text-accent transition-colors"
+              )}>
                 Computer Science
               </p>
-              <p className="text-sm text-gray-400">
+              <p className="text-sm text-muted-foreground">
                 School of Engineering
               </p>
             </Link>
-            <address className="mt-4 text-sm not-italic leading-relaxed text-gray-400">
+            <address className="mt-4 text-sm not-italic leading-relaxed text-muted-foreground">
               Computer Science Building
               <br />
               123 University Avenue
@@ -41,86 +45,45 @@ export function Footer() {
             </address>
           </div>
 
-          <div>
-            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-3">
-              Department
-            </h3>
-            <ul className="space-y-2">
-              {footerLinks.department.map(({ href, label }) => (
-                <li key={label}>
-                  <Link
-                    href={href}
-                    className="text-sm text-gray-400 hover:text-white transition-colors"
-                  >
-                    {label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-3">
-              Resources
-            </h3>
-            <ul className="space-y-2">
-              {footerLinks.resources.map(({ href, label }) => (
-                <li key={label}>
-                  <Link
-                    href={href}
-                    className="text-sm text-gray-400 hover:text-white transition-colors"
-                  >
-                    {label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-3">
-              University
-            </h3>
-            <ul className="space-y-2">
-              {footerLinks.university.map(({ href, label }) => (
-                <li key={label}>
-                  <Link
-                    href={href}
-                    className="text-sm text-gray-400 hover:text-white transition-colors"
-                  >
-                    {label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {Object.entries(footerLinks).map(([title, links]) => (
+            <div key={title}>
+              <h3 className="text-xs font-semibold text-foreground uppercase tracking-widest mb-4">
+                {title}
+              </h3>
+              <ul className="space-y-2.5">
+                {links.map(({ href, label }) => (
+                  <li key={label}>
+                    <Link
+                      href={href}
+                      className="text-sm text-muted-foreground hover:text-accent transition-colors"
+                    >
+                      {label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
 
-        <div className="mt-10 pt-8 border-t border-gray-800">
+        <div className="mt-12 pt-8 border-t border-border">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-xs text-gray-500">
-              &copy; {new Date().getFullYear()} Department of Computer Science. All rights
-              reserved.
+            <p className="text-xs text-muted-foreground">
+              &copy; {new Date().getFullYear()} Department of Computer Science.
+              All rights reserved.
             </p>
             <div className="flex gap-6">
-              <Link
-                href="#"
-                className="text-xs text-gray-500 hover:text-gray-300 transition-colors"
-              >
-                Privacy Policy
-              </Link>
-              <Link
-                href="#"
-                className="text-xs text-gray-500 hover:text-gray-300 transition-colors"
-              >
-                Accessibility
-              </Link>
-              <Link
-                href="#"
-                className="text-xs text-gray-500 hover:text-gray-300 transition-colors"
-              >
-                Terms of Use
-              </Link>
+              {["Privacy Policy", "Accessibility", "Terms of Use"].map(
+                (label) => (
+                  <Link
+                    key={label}
+                    href="#"
+                    className="text-xs text-muted-foreground hover:text-accent transition-colors"
+                  >
+                    {label}
+                  </Link>
+                )
+              )}
             </div>
           </div>
         </div>

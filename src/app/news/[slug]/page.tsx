@@ -53,11 +53,11 @@ export default async function NewsDetailPage({ params }: NewsDetailPageProps) {
   }
 
   return (
-    <article className="max-w-content mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-      <nav aria-label="Breadcrumb" className="mb-8">
-        <ol className="flex items-center gap-2 text-sm text-gray-500">
+    <article className="max-w-content mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+      <nav aria-label="Breadcrumb" className="mb-10">
+        <ol className="flex items-center gap-2 text-sm text-muted-foreground">
           <li>
-            <Link href="/" className="hover:text-primary transition-colors">
+            <Link href="/" className="hover:text-accent transition-colors">
               Home
             </Link>
           </li>
@@ -65,14 +65,14 @@ export default async function NewsDetailPage({ params }: NewsDetailPageProps) {
           <li>
             <Link
               href="/news"
-              className="hover:text-primary transition-colors"
+              className="hover:text-accent transition-colors"
             >
               News
             </Link>
           </li>
           <li aria-hidden="true">/</li>
           <li>
-            <span className="text-gray-900 font-medium" aria-current="page">
+            <span className="text-foreground font-medium" aria-current="page">
               {article.title}
             </span>
           </li>
@@ -81,16 +81,16 @@ export default async function NewsDetailPage({ params }: NewsDetailPageProps) {
 
       <header className="max-w-3xl">
         <CategoryBadge category={article.category} className="mb-4" />
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-gray-900 leading-tight">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-foreground leading-tight">
           {article.title}
         </h1>
-        <p className="mt-4 text-xl text-gray-600 leading-relaxed">
+        <p className="mt-5 text-xl text-muted-foreground leading-relaxed">
           {article.summary}
         </p>
-        <div className="mt-6 flex items-center gap-3 text-sm text-gray-500 border-b border-gray-200 pb-6">
+        <div className="mt-8 flex items-center gap-3 text-sm text-muted-foreground border-b border-border pb-8">
           <div>
-            <span className="font-medium text-gray-900">{article.author}</span>
-            <span className="block text-gray-500">{article.authorRole}</span>
+            <span className="font-medium text-foreground">{article.author}</span>
+            <span className="block text-muted-foreground">{article.authorRole}</span>
           </div>
           <span aria-hidden="true">&middot;</span>
           <time dateTime={article.publishedAt}>
@@ -99,7 +99,7 @@ export default async function NewsDetailPage({ params }: NewsDetailPageProps) {
         </div>
       </header>
 
-      <div className="mt-8 rounded-lg overflow-hidden max-w-3xl">
+      <div className="mt-10 rounded-md overflow-hidden max-w-3xl">
         <CardImage
           src={article.image.url}
           alt={article.image.alt}
@@ -108,11 +108,11 @@ export default async function NewsDetailPage({ params }: NewsDetailPageProps) {
       </div>
 
       <div
-        className="mt-10 prose max-w-3xl"
+        className="mt-12 prose max-w-3xl"
         dangerouslySetInnerHTML={{ __html: article.body.html }}
       />
 
-      <div className="mt-12 pt-8 border-t border-gray-200 max-w-3xl">
+      <div className="mt-14 pt-8 border-t border-border max-w-3xl">
         <Button href="/news" variant="ghost">
           &larr; Back to all news
         </Button>

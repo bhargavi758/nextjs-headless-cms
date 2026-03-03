@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -22,7 +23,11 @@ export function Navigation() {
     <nav aria-label="Main navigation">
       <button
         type="button"
-        className="md:hidden p-2 -mr-2 text-white hover:bg-primary-dark rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+        className={cn(
+          "md:hidden p-2 -mr-2 text-foreground rounded-md",
+          "hover:bg-muted",
+          "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+        )}
         aria-expanded={mobileOpen}
         aria-controls="main-nav-menu"
         onClick={() => setMobileOpen(!mobileOpen)}
@@ -65,20 +70,26 @@ export function Navigation() {
 
       <ul
         id="main-nav-menu"
-        className={`${
-          mobileOpen ? "flex" : "hidden"
-        } md:flex flex-col md:flex-row absolute md:relative left-0 right-0 top-full md:top-auto bg-primary md:bg-transparent shadow-lg md:shadow-none z-50 md:gap-1`}
+        className={cn(
+          mobileOpen ? "flex" : "hidden",
+          "md:flex flex-col md:flex-row",
+          "absolute md:relative left-0 right-0 top-full md:top-auto",
+          "bg-background md:bg-transparent",
+          "shadow-lg md:shadow-none border-b border-border md:border-0",
+          "z-50 md:gap-1"
+        )}
       >
         {navLinks.map(({ href, label }) => (
           <li key={href}>
             <Link
               href={href}
               onClick={() => setMobileOpen(false)}
-              className={`block px-4 py-3 md:py-2 md:px-3 text-sm font-medium rounded-md transition-colors ${
+              className={cn(
+                "block px-4 py-3 md:py-2 md:px-3 text-sm font-medium transition-colors",
                 isActive(href)
-                  ? "text-white bg-primary-dark"
-                  : "text-white/90 hover:text-white hover:bg-primary-dark/50"
-              }`}
+                  ? "text-accent"
+                  : "text-muted-foreground hover:text-foreground"
+              )}
               aria-current={isActive(href) ? "page" : undefined}
             >
               {label}

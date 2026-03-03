@@ -9,30 +9,39 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        border: "hsl(var(--border))",
+        ring: "hsl(var(--ring))",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#2563EB",
-          dark: "#1E40AF",
-          light: "#60A5FA",
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
         },
-        sand: {
-          DEFAULT: "#D2C295",
-          light: "#F9F6EF",
-          dark: "#B6A472",
+        secondary: {
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
+        },
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
         },
         accent: {
-          teal: "#0D9488",
-          sky: "#0098DB",
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
+        },
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
         },
       },
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
+      },
       fontFamily: {
-        serif: ["Georgia", "Times New Roman", "serif"],
-        sans: [
-          "Source Sans Pro",
-          "Helvetica Neue",
-          "Helvetica",
-          "Arial",
-          "sans-serif",
-        ],
+        serif: ["Georgia", "Cambria", "Times New Roman", "serif"],
+        sans: ["Inter", "system-ui", "-apple-system", "sans-serif"],
       },
       maxWidth: {
         content: "72rem",
