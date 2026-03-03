@@ -13,7 +13,7 @@ export const events: CMSEvent[] = [
 <h3>Who Should Attend</h3>
 <p>This lecture is designed for graduate students, postdoctoral researchers, and faculty in computer science, physics, and electrical engineering. Undergraduate students with coursework in quantum mechanics are also welcome.</p>
 <h3>About the Speaker</h3>
-<p>Professor Vasquez is the recipient of the 2025 MacArthur Fellowship and has published over 120 papers in Nature, Science, and Physical Review Letters. Her work on bosonic codes has been cited over 8,000 times.</p>`,
+<p>Professor Vasquez is the recipient of the 2023 MacArthur Fellowship and has published over 120 papers in Nature, Science, and Physical Review Letters. Her work on bosonic codes has been cited over 8,000 times.</p>`,
     },
     image: {
       url: "/images/quantum-computing.jpg",
@@ -21,15 +21,15 @@ export const events: CMSEvent[] = [
       width: 1200,
       height: 630,
     },
-    date: "2026-03-15",
+    date: "2024-09-15",
     time: "4:00 PM – 5:30 PM PST",
-    location: "Hewlett Teaching Center, Room 200",
+    location: "Engineering Hall, Room 201",
     category: "lecture",
     featured: true,
     speaker: "Prof. Elena Vasquez",
     speakerTitle: "MIT Center for Quantum Engineering",
-    registrationUrl: "https://events.stanford.edu/register/quantum-2026",
-    publishedAt: "2026-02-01T09:00:00Z",
+    registrationUrl: "#",
+    publishedAt: "2024-08-01T09:00:00Z",
   },
   {
     id: "evt-002",
@@ -38,12 +38,12 @@ export const events: CMSEvent[] = [
     summary:
       "A hands-on two-day workshop on applying deep learning techniques to climate modeling, satellite imagery analysis, and extreme weather prediction.",
     body: {
-      html: `<p>The Stanford Institute for Human-Centered AI (HAI) and the School of Earth, Energy & Environmental Sciences present a collaborative workshop at the intersection of machine learning and climate science.</p>
+      html: `<p>The Institute for Human-Centered AI and the School of Earth & Environmental Sciences present a collaborative workshop at the intersection of machine learning and climate science.</p>
 <p>Participants will work with real-world datasets from NOAA and NASA, implementing convolutional neural networks for satellite imagery classification and physics-informed neural networks for climate model emulation.</p>
 <h3>Workshop Format</h3>
-<p>Day 1 focuses on foundational concepts and guided tutorials. Day 2 is project-based, where teams tackle real climate prediction challenges. All code will be provided in Jupyter notebooks with GPU access via Stanford's Sherlock cluster.</p>
+<p>Day 1 focuses on foundational concepts and guided tutorials. Day 2 is project-based, where teams tackle real climate prediction challenges. All code will be provided in Jupyter notebooks with GPU access via the university's computing cluster.</p>
 <h3>Prerequisites</h3>
-<p>Proficiency in Python and basic familiarity with PyTorch or TensorFlow. Prior coursework in machine learning (CS 229 or equivalent) is strongly recommended.</p>`,
+<p>Proficiency in Python and basic familiarity with PyTorch or TensorFlow. Prior coursework in machine learning (an introductory ML course or equivalent) is strongly recommended.</p>`,
     },
     image: {
       url: "/images/climate-ml.jpg",
@@ -51,16 +51,16 @@ export const events: CMSEvent[] = [
       width: 1200,
       height: 630,
     },
-    date: "2026-03-22",
-    endDate: "2026-03-23",
+    date: "2024-09-22",
+    endDate: "2024-09-23",
     time: "9:00 AM – 5:00 PM PST",
-    location: "Gates Computer Science Building, Room 104",
+    location: "Science Center, Room 104",
     category: "workshop",
     featured: true,
     speaker: "Prof. Sarah Chen & Dr. Marcus Rivera",
-    speakerTitle: "Stanford HAI / School of Earth Sciences",
-    registrationUrl: "https://events.stanford.edu/register/climate-ml",
-    publishedAt: "2026-02-05T10:00:00Z",
+    speakerTitle: "Institute for AI / School of Earth Sciences",
+    registrationUrl: "#",
+    publishedAt: "2024-08-05T10:00:00Z",
   },
   {
     id: "evt-003",
@@ -85,14 +85,14 @@ export const events: CMSEvent[] = [
       width: 1200,
       height: 630,
     },
-    date: "2026-04-02",
+    date: "2024-10-02",
     time: "2:00 PM – 4:00 PM PST",
-    location: "Stanford Law School, Room 180",
+    location: "Humanities Building, Room 180",
     category: "seminar",
     featured: false,
     speaker: "Prof. James Whitfield (moderator)",
     speakerTitle: "Department of Philosophy",
-    publishedAt: "2026-02-10T14:00:00Z",
+    publishedAt: "2024-08-10T14:00:00Z",
   },
   {
     id: "evt-004",
@@ -101,7 +101,7 @@ export const events: CMSEvent[] = [
     summary:
       "The flagship annual event featuring keynotes from Turing Award winners and rising stars in systems, theory, and AI research.",
     body: {
-      html: `<p>The Stanford Computer Science Department is proud to present the 47th Annual Distinguished Colloquium, a full-day event celebrating the breadth and depth of computing research.</p>
+      html: `<p>The Computer Science Department is proud to present the 47th Annual Distinguished Colloquium, a full-day event celebrating the breadth and depth of computing research.</p>
 <p>This year's theme, "Computing for Humanity," features three keynote addresses, twelve lightning talks from current PhD students, a poster session, and a reception. The colloquium is the department's premier showcase of research excellence.</p>
 <h3>Keynote Speakers</h3>
 <p>Dr. Yoshua Bengio (Mila), Prof. Shafi Goldwasser (UC Berkeley), and Dr. Jeff Dean (Google DeepMind) will each deliver 45-minute keynotes followed by audience Q&A.</p>
@@ -114,13 +114,13 @@ export const events: CMSEvent[] = [
       width: 1200,
       height: 630,
     },
-    date: "2026-04-18",
+    date: "2024-10-18",
     time: "9:00 AM – 6:00 PM PST",
-    location: "Memorial Auditorium",
+    location: "University Auditorium",
     category: "colloquium",
     featured: true,
-    registrationUrl: "https://events.stanford.edu/register/cs-colloquium-2026",
-    publishedAt: "2026-01-20T08:00:00Z",
+    registrationUrl: "#",
+    publishedAt: "2024-08-20T08:00:00Z",
   },
   {
     id: "evt-005",
@@ -140,22 +140,22 @@ export const events: CMSEvent[] = [
       width: 1200,
       height: 630,
     },
-    date: "2026-04-10",
+    date: "2024-10-10",
     time: "10:00 AM – 3:00 PM PST",
-    location: "Huang Engineering Center, Room 018",
+    location: "Technology Center, Room 018",
     category: "workshop",
     featured: false,
-    publishedAt: "2026-02-15T11:00:00Z",
+    publishedAt: "2024-08-15T11:00:00Z",
   },
   {
     id: "evt-006",
-    slug: "spring-graduate-social",
-    title: "Spring Quarter Graduate Student Social",
+    slug: "fall-graduate-social",
+    title: "Fall Quarter Graduate Student Social",
     summary:
-      "An informal gathering for graduate students across all CS research areas to connect, unwind, and build community at the start of spring quarter.",
+      "An informal gathering for graduate students across all CS research areas to connect, unwind, and build community at the start of fall quarter.",
     body: {
-      html: `<p>Kick off spring quarter by meeting fellow graduate students from across the department's research groups. Whether you're in theory, systems, AI, HCI, or any other area, this is your chance to build connections beyond your lab.</p>
-<p>The event features food from local restaurants, lawn games on the Gates courtyard, and short "research speed dating" sessions where you have three minutes to explain your work to someone from a completely different area.</p>
+      html: `<p>Kick off fall quarter by meeting fellow graduate students from across the department's research groups. Whether you're in theory, systems, AI, HCI, or any other area, this is your chance to build connections beyond your lab.</p>
+<p>The event features food from local restaurants, lawn games on the courtyard, and short "research speed dating" sessions where you have three minutes to explain your work to someone from a completely different area.</p>
 <p>Organized by the CS Graduate Student Council. All CS graduate students (MS and PhD) are welcome. No registration required.</p>`,
     },
     image: {
@@ -164,12 +164,12 @@ export const events: CMSEvent[] = [
       width: 1200,
       height: 630,
     },
-    date: "2026-04-05",
+    date: "2024-10-05",
     time: "5:00 PM – 8:00 PM PST",
-    location: "Gates Building Courtyard",
+    location: "Science Center Courtyard",
     category: "social",
     featured: false,
-    publishedAt: "2026-03-01T09:00:00Z",
+    publishedAt: "2024-09-01T09:00:00Z",
   },
   {
     id: "evt-007",
@@ -194,14 +194,14 @@ export const events: CMSEvent[] = [
       width: 1200,
       height: 630,
     },
-    date: "2026-05-06",
+    date: "2024-11-06",
     time: "3:30 PM – 5:00 PM PST",
-    location: "Allen Building, Room 101",
+    location: "Innovation Building, Room 101",
     category: "seminar",
     featured: false,
     speaker: "Dr. Min-Jae Kwon",
     speakerTitle: "Intel Labs, Neuromorphic Computing Division",
-    publishedAt: "2026-03-10T10:00:00Z",
+    publishedAt: "2024-09-10T10:00:00Z",
   },
   {
     id: "evt-008",
@@ -221,13 +221,13 @@ export const events: CMSEvent[] = [
       width: 1200,
       height: 630,
     },
-    date: "2026-05-14",
-    endDate: "2026-05-15",
+    date: "2024-11-14",
+    endDate: "2024-11-15",
     time: "8:30 AM – 5:30 PM PST",
-    location: "Frances C. Arrillaga Alumni Center",
+    location: "Alumni Conference Center",
     category: "conference",
     featured: false,
-    registrationUrl: "https://events.stanford.edu/register/fv-symposium-2026",
-    publishedAt: "2026-02-20T12:00:00Z",
+    registrationUrl: "#",
+    publishedAt: "2024-09-20T12:00:00Z",
   },
 ];

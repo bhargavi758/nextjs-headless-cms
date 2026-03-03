@@ -29,7 +29,7 @@ export function NewsCard({ article, featured = false }: NewsCardProps) {
         </div>
         <CardContent className="flex flex-col justify-center md:w-3/5">
           <CategoryBadge category={article.category} className="mb-2" />
-          <h3 className="text-xl lg:text-2xl font-serif font-bold text-gray-900 group-hover:text-cardinal transition-colors">
+          <h3 className="text-xl lg:text-2xl font-serif font-bold text-gray-900 group-hover:text-primary transition-colors">
             <Link href={`/news/${article.slug}`}>{article.title}</Link>
           </h3>
           <p className="mt-3 text-gray-600 line-clamp-3">{article.summary}</p>
@@ -53,7 +53,7 @@ export function NewsCard({ article, featured = false }: NewsCardProps) {
         <CardImage src={article.image.url} alt={article.image.alt} />
         <CardContent>
           <CategoryBadge category={article.category} className="mb-2" />
-          <h3 className="text-lg font-serif font-bold text-gray-900 group-hover:text-cardinal transition-colors line-clamp-2">
+          <h3 className="text-lg font-serif font-bold text-gray-900 group-hover:text-primary transition-colors line-clamp-2">
             {article.title}
           </h3>
           <p className="mt-2 text-sm text-gray-600 line-clamp-2">

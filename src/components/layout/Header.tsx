@@ -3,23 +3,19 @@ import { Navigation } from "./Navigation";
 
 export function Header() {
   return (
-    <header className="bg-cardinal text-white sticky top-0 z-40">
+    <header className="bg-primary text-white sticky top-0 z-40">
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-white focus:text-cardinal focus:px-4 focus:py-2 focus:top-2 focus:left-2 focus:rounded"
+        className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-white focus:text-primary focus:px-4 focus:py-2 focus:top-2 focus:left-2 focus:rounded"
       >
         Skip to main content
       </a>
 
-      <div className="border-b border-cardinal-dark/30">
+      <div className="border-b border-primary-dark/30">
         <div className="max-w-content mx-auto px-4 sm:px-6 lg:px-8 py-2">
-          <Link
-            href="https://www.stanford.edu"
-            className="text-sm font-sans text-white/80 hover:text-white transition-colors"
-            aria-label="Stanford University homepage"
-          >
-            Stanford University
-          </Link>
+          <span className="text-sm font-sans text-white/80">
+            University Home
+          </span>
         </div>
       </div>
 

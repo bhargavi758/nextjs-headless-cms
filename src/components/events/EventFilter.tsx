@@ -43,9 +43,9 @@ export function EventFilter() {
             role="radio"
             aria-checked={activeCategory === value}
             onClick={() => handleFilter(value)}
-            className={`px-4 py-2 text-sm font-medium rounded-full transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cardinal focus-visible:ring-offset-2 ${
+            className={`px-4 py-2 text-sm font-medium rounded-full transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 ${
               activeCategory === value
-                ? "bg-cardinal text-white"
+                ? "bg-primary text-white"
                 : "bg-gray-100 text-gray-700 hover:bg-gray-200"
             }`}
           >

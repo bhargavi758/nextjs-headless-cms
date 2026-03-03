@@ -25,13 +25,13 @@ export function EventCard({ event }: EventCardProps) {
           <div className="flex items-center gap-2 mb-2">
             <CategoryBadge category={event.category} />
             {event.featured && (
-              <span className="text-xs font-medium text-cardinal">
+              <span className="text-xs font-medium text-primary">
                 Featured
               </span>
             )}
           </div>
 
-          <h3 className="text-lg font-serif font-bold text-gray-900 group-hover:text-cardinal transition-colors line-clamp-2">
+          <h3 className="text-lg font-serif font-bold text-gray-900 group-hover:text-primary transition-colors line-clamp-2">
             {event.title}
           </h3>
 

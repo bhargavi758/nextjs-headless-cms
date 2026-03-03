@@ -22,7 +22,7 @@ export function Navigation() {
     <nav aria-label="Main navigation">
       <button
         type="button"
-        className="md:hidden p-2 -mr-2 text-white hover:bg-cardinal-dark rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+        className="md:hidden p-2 -mr-2 text-white hover:bg-primary-dark rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
         aria-expanded={mobileOpen}
         aria-controls="main-nav-menu"
         onClick={() => setMobileOpen(!mobileOpen)}
@@ -67,7 +67,7 @@ export function Navigation() {
         id="main-nav-menu"
         className={`${
           mobileOpen ? "flex" : "hidden"
-        } md:flex flex-col md:flex-row absolute md:relative left-0 right-0 top-full md:top-auto bg-cardinal md:bg-transparent shadow-lg md:shadow-none z-50 md:gap-1`}
+        } md:flex flex-col md:flex-row absolute md:relative left-0 right-0 top-full md:top-auto bg-primary md:bg-transparent shadow-lg md:shadow-none z-50 md:gap-1`}
       >
         {navLinks.map(({ href, label }) => (
           <li key={href}>
@@ -76,8 +76,8 @@ export function Navigation() {
               onClick={() => setMobileOpen(false)}
               className={`block px-4 py-3 md:py-2 md:px-3 text-sm font-medium rounded-md transition-colors ${
                 isActive(href)
-                  ? "text-white bg-cardinal-dark"
-                  : "text-white/90 hover:text-white hover:bg-cardinal-dark/50"
+                  ? "text-white bg-primary-dark"
+                  : "text-white/90 hover:text-white hover:bg-primary-dark/50"
               }`}
               aria-current={isActive(href) ? "page" : undefined}
             >

@@ -39,7 +39,7 @@ export function CardImage({
   return (
     <div className={`${ratioClass} relative overflow-hidden bg-gray-100`}>
       <div
-        className="absolute inset-0 bg-gradient-to-br from-cardinal/20 to-sandstone/30"
+        className="absolute inset-0 bg-gradient-to-br from-primary/20 to-sand/30"
         role="img"
         aria-label={alt}
       />

@@ -55,7 +55,7 @@ export default async function EventDetailPage({ params }: EventPageProps) {
       <nav aria-label="Breadcrumb" className="mb-8">
         <ol className="flex items-center gap-2 text-sm text-gray-500">
           <li>
-            <Link href="/" className="hover:text-cardinal transition-colors">
+            <Link href="/" className="hover:text-primary transition-colors">
               Home
             </Link>
           </li>
@@ -63,7 +63,7 @@ export default async function EventDetailPage({ params }: EventPageProps) {
           <li>
             <Link
               href="/events"
-              className="hover:text-cardinal transition-colors"
+              className="hover:text-primary transition-colors"
             >
               Events
             </Link>
@@ -107,7 +107,7 @@ export default async function EventDetailPage({ params }: EventPageProps) {
           className="mt-10 lg:mt-0"
           aria-label="Event details"
         >
-          <div className="bg-sandstone-light rounded-lg p-6 sticky top-24">
+          <div className="bg-sand-light rounded-lg p-6 sticky top-24">
             <h2 className="text-lg font-serif font-bold text-gray-900 mb-4">
               Event Details
             </h2>

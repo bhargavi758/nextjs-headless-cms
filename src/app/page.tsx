@@ -103,16 +103,16 @@ export default async function HomePage() {
   return (
     <>
       <section
-        className="relative bg-cardinal text-white"
+        className="relative bg-primary text-white"
         aria-labelledby="hero-heading"
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-cardinal-dark via-cardinal to-cardinal-light opacity-90" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary-dark via-primary to-primary-light opacity-90" />
         <div className="relative max-w-content mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-36">
           <h1
             id="hero-heading"
             className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold tracking-tight text-white max-w-3xl"
           >
-            {page?.title ?? "Stanford Computer Science"}
+            {page?.title ?? "Department of Computer Science"}
           </h1>
           <p className="mt-6 text-lg sm:text-xl text-white/85 max-w-2xl leading-relaxed">
             {page?.body.html
@@ -124,7 +124,7 @@ export default async function HomePage() {
               href="/events"
               variant="secondary"
               size="lg"
-              className="bg-white text-cardinal hover:bg-gray-100 border-0"
+              className="bg-white text-primary hover:bg-gray-100 border-0"
             >
               Upcoming Events
             </Button>
@@ -132,7 +132,7 @@ export default async function HomePage() {
               href="/about"
               variant="outline"
               size="lg"
-              className="border-white text-white hover:bg-white hover:text-cardinal"
+              className="border-white text-white hover:bg-white hover:text-primary"
             >
               About the Department
             </Button>
@@ -141,7 +141,7 @@ export default async function HomePage() {
       </section>
 
       <section
-        className="py-12 bg-sandstone-light"
+        className="py-12 bg-sand-light"
         aria-labelledby="quick-links-heading"
       >
         <div className="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
@@ -153,13 +153,13 @@ export default async function HomePage() {
               <Link
                 key={link.title}
                 href={link.href}
-                className="flex items-start gap-4 p-5 rounded-lg bg-white shadow-sm border border-gray-100 hover:shadow-md hover:border-cardinal/20 transition-all group"
+                className="flex items-start gap-4 p-5 rounded-lg bg-white shadow-sm border border-gray-100 hover:shadow-md hover:border-primary/20 transition-all group"
               >
-                <div className="shrink-0 p-2 rounded-lg bg-cardinal/5 text-cardinal group-hover:bg-cardinal group-hover:text-white transition-colors">
+                <div className="shrink-0 p-2 rounded-lg bg-primary/5 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
                   {link.icon}
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 group-hover:text-cardinal transition-colors">
+                  <h3 className="font-semibold text-gray-900 group-hover:text-primary transition-colors">
                     {link.title}
                   </h3>
                   <p className="text-sm text-gray-500 mt-0.5">

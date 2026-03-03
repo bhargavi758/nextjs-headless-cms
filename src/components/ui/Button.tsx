@@ -18,13 +18,13 @@ type ButtonProps = ButtonAsButton | ButtonAsLink;
 
 const variantStyles = {
   primary:
-    "bg-cardinal text-white hover:bg-cardinal-dark focus-visible:ring-cardinal",
+    "bg-primary text-white hover:bg-primary-dark focus-visible:ring-primary",
   secondary:
-    "bg-sandstone-light text-cardinal border border-sandstone hover:bg-sandstone/30 focus-visible:ring-cardinal",
+    "bg-sand-light text-primary border border-sand hover:bg-sand/30 focus-visible:ring-primary",
   outline:
-    "border-2 border-cardinal text-cardinal hover:bg-cardinal hover:text-white focus-visible:ring-cardinal",
+    "border-2 border-primary text-primary hover:bg-primary hover:text-white focus-visible:ring-primary",
   ghost:
-    "text-cardinal hover:bg-cardinal/5 focus-visible:ring-cardinal",
+    "text-primary hover:bg-primary/5 focus-visible:ring-primary",
 };
 
 const sizeStyles = {

@@ -9,18 +9,18 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        cardinal: {
-          DEFAULT: "#8C1515",
-          dark: "#6B0F0F",
-          light: "#B83A3A",
+        primary: {
+          DEFAULT: "#2563EB",
+          dark: "#1E40AF",
+          light: "#60A5FA",
         },
-        sandstone: {
+        sand: {
           DEFAULT: "#D2C295",
           light: "#F9F6EF",
           dark: "#B6A472",
         },
-        palo: {
-          verde: "#175E54",
+        accent: {
+          teal: "#0D9488",
           sky: "#0098DB",
         },
       },

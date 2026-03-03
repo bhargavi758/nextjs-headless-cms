@@ -19,7 +19,7 @@ export default async function AboutPage() {
       <nav aria-label="Breadcrumb" className="mb-8">
         <ol className="flex items-center gap-2 text-sm text-gray-500">
           <li>
-            <Link href="/" className="hover:text-cardinal transition-colors">
+            <Link href="/" className="hover:text-primary transition-colors">
               Home
             </Link>
           </li>

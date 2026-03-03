@@ -5,15 +5,15 @@ import "@/styles/globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "Stanford Computer Science",
-    template: "%s | Stanford CS",
+    default: "Department of Computer Science",
+    template: "%s | CS Department",
   },
   description:
-    "Stanford University Computer Science Department — Advancing the frontiers of computing for humanity through world-class research and education.",
+    "Department of Computer Science — Advancing the frontiers of computing for humanity through world-class research and education.",
   openGraph: {
     type: "website",
     locale: "en_US",
-    siteName: "Stanford Computer Science",
+    siteName: "Department of Computer Science",
   },
 };
 

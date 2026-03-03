@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-type BadgeVariant = "default" | "cardinal" | "green" | "blue" | "amber";
+type BadgeVariant = "default" | "primary" | "green" | "blue" | "amber";
 
 interface BadgeProps {
   children: ReactNode;
@@ -10,7 +10,7 @@ interface BadgeProps {
 
 const variantStyles: Record<BadgeVariant, string> = {
   default: "bg-gray-100 text-gray-700",
-  cardinal: "bg-cardinal/10 text-cardinal",
+  primary: "bg-primary/10 text-primary",
   green: "bg-emerald-50 text-emerald-700",
   blue: "bg-blue-50 text-blue-700",
   amber: "bg-amber-50 text-amber-700",
@@ -31,14 +31,14 @@ export function Badge({
 }
 
 const categoryVariantMap: Record<string, BadgeVariant> = {
-  lecture: "cardinal",
+  lecture: "primary",
   seminar: "blue",
   workshop: "green",
   conference: "amber",
-  colloquium: "cardinal",
+  colloquium: "primary",
   social: "default",
   research: "blue",
-  faculty: "cardinal",
+  faculty: "primary",
   students: "green",
   awards: "amber",
   announcements: "default",

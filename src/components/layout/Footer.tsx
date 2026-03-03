@@ -12,9 +12,9 @@ const footerLinks = {
     { href: "#", label: "Research Labs" },
   ],
   university: [
-    { href: "https://www.stanford.edu", label: "Stanford Home" },
-    { href: "https://engineering.stanford.edu", label: "School of Engineering" },
-    { href: "https://exploredegrees.stanford.edu", label: "Explore Degrees" },
+    { href: "#", label: "University Home" },
+    { href: "#", label: "School of Engineering" },
+    { href: "#", label: "Explore Degrees" },
   ],
 };
 
@@ -29,15 +29,15 @@ export function Footer() {
                 Computer Science
               </p>
               <p className="text-sm text-gray-400">
-                Stanford University
+                School of Engineering
               </p>
             </Link>
             <address className="mt-4 text-sm not-italic leading-relaxed text-gray-400">
-              Gates Computer Science Building
+              Computer Science Building
               <br />
-              353 Jane Stanford Way
+              123 University Avenue
               <br />
-              Stanford, CA 94305
+              Anytown, CA 90000
             </address>
           </div>
 
@@ -99,7 +99,7 @@ export function Footer() {
         <div className="mt-10 pt-8 border-t border-gray-800">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-xs text-gray-500">
-              &copy; {new Date().getFullYear()} Stanford University. All rights
+              &copy; {new Date().getFullYear()} Department of Computer Science. All rights
               reserved.
             </p>
             <div className="flex gap-6">
